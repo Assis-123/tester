@@ -1,0 +1,88 @@
+body{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+@property --rotate{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.box{
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+    background: repeating-conic-gradient(from var(--rotate), red 0%, blue 10%, transparent 0%, transparent 50%);
+    animation: rotation 6s linear infinite;
+}
+
+@keyframes rotation{
+    0%{
+       --rotate: 0deg;
+    }
+    100%{
+       --rotate: 360deg;
+    }
+}
+
+.box::before{
+    content: '';
+    position:absolute;
+    background-color: #222;
+    inset: 3px;
+    z-index: 1;
+}
+
+#dados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#dados.h2{
+    color:white;
+}
+
+.user{
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 80px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.user::before{
+    position: absolute;
+    content:'';
+    inset: 0px;
+    background-color: #141414;
+
+}
+
+.user::after{
+    content: '';
+    position:absolute;
+    inset:2px;
+    background: repeating-conic-gradient(from var(--rotate), red 0%, blue 10%, transparent 0%, transparent 50%);
+    animation: rotation 6s linear infinite;
+}
+
+span{
+    position: absolute;
+    inset: 4px;
+    background-color: #222;
+    z-index: 3;
+}
