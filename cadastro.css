@@ -19,9 +19,10 @@ body{
     align-items: center;
     justify-content: center;
     width: 400px;
-    height: 400px;
+    height: 500px;
     flex-direction: column;
-    background: repeating-conic-gradient(from var(--rotate), red 0%, blue 10%, transparent 0%, transparent 50%);
+    box-shadow: #1c1c1c 0 0 50px 20px;
+    background: repeating-conic-gradient(from var(--rotate),rgb(165, 243, 236) 0%, rgb(165, 243, 236) 10%, transparent 0%, transparent 50%);
     animation: rotation 6s linear infinite;
 }
 
@@ -50,18 +51,30 @@ body{
     z-index: 2;
 }
 
-#dados.h2{
-    color:white;
+h2{
+    font-size: 45px;
+    color: rgb(199, 199, 199);
+    font-family: sans-serif;
 }
 
 .user{
     position: relative;
     display: flex;
     width: 250px;
-    height: 80px;
+    height: 60px;
     margin-bottom: 10px;
     justify-content: center;
     align-items: center;
+}
+
+.user input{
+    background-color: #222;
+    border: none;
+    font-size: large;
+    color: gray;
+    font-family: sans-serif;
+    z-index: 4;
+    align-content: center;
 }
 
 .user::before{
@@ -76,7 +89,7 @@ body{
     content: '';
     position:absolute;
     inset:2px;
-    background: repeating-conic-gradient(from var(--rotate), red 0%, blue 10%, transparent 0%, transparent 50%);
+    background: repeating-conic-gradient(from var(--rotate), rgb(165, 243, 236) 0%, rgb(165, 243, 236) 19%, transparent 0%, transparent 50%);
     animation: rotation 6s linear infinite;
 }
 
@@ -85,4 +98,19 @@ span{
     inset: 4px;
     background-color: #222;
     z-index: 3;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+
+.button input{
+    background-color: #222;
+    border: none;
+    font-size: large;
+    color: rgb(199, 199, 199);
+    font-family: sans-serif;
 }
