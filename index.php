@@ -10,14 +10,14 @@
     <section>
         <div id="box">
             <?php
-            $con = mysqli_connect("localhost", "root", "", "projeto");
+            $con = mysqli_connect("localhost", "root", "", "bancodados");
             $sel = mysqli_query($con, "SELECT * FROM dados");
             
             while ($arranjo = mysqli_fetch_array($sel)){
                 echo $arranjo['nome'] ."<br>";
                 echo $arranjo['CPF'] ."<br>";
                 echo $arranjo['endereço'] ."<br>";
-                echo $arranjo['telefone'] ."<br>";
+                echo $arranjo['telefone'] ."<br>"."<br>";
             };
             ?>    
         </div>
